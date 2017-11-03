@@ -3,8 +3,7 @@
 """
 Code to load an expert policy and generate roll-out data for behavioral cloning.
 Example usage:
-    python run_expert.py experts/Humanoid-v1.pkl Humanoid-v1 --render \
-            --num_rollouts 20
+    python3 run_expert.py experts/Humanoid-v1.pkl Humanoid-v1 --render --num_rollouts 20
 
 Author of this script and included expert policies: Jonathan Ho (hoj@openai.com)
 """
@@ -30,6 +29,7 @@ def main():
     print('loading and building expert policy')
     policy_fn = load_policy.load_policy(args.expert_policy_file)
     print('loaded and built')
+
 
     with tf.Session():
         tf_util.initialize()
